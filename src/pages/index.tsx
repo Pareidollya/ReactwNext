@@ -2,15 +2,14 @@
 
 import { useEffect } from "react"
 
-export default function Home() {
+export default function Home(props) {
  //dispara algo semrpe q algo mudar na aplcialçao
   
   return (
-    <h1>
-    
-    <div><img src="IMG-20210519-WA0067.png" alt="cu bosta mijo" /></div>
-
-    </h1>
+    <div>
+      <h1> <img src="XV_logo.svg" alt="sim"/></h1>
+      <p>{JSON.stringify(props.episodes)}</p>
+    </div>
   )
 }
 
