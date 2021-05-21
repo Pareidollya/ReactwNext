@@ -8,7 +8,7 @@ export function Player(){
         <div className = {styles.playerContainer}>
             <header>
                 <img src ="/playing.svg" alt="peidando" />
-                <strong>Peidando agora</strong> 
+                <strong>SÓ O FILÉ</strong> 
             </header>
 
             <div className = {styles.emptyPlayer}>
