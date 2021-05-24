@@ -1,5 +1,6 @@
 //SPA
 import { GetStaticProps } from 'next';
+import { useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link'; //o componente vai em volta da ancora de link
 import { format, parseISO } from 'date-fns';
@@ -8,6 +9,7 @@ import { api } from '../services/api';
 import { convertDurationToTimeString } from '../utils/convertDutrationToTimeString';
 
 import styles from './home.module.scss';
+import { PlayerContext } from '../components/contexts/PlayerContext';
 
 type Episode ={
   id: string;
@@ -32,14 +34,16 @@ type HomeProps = {
 //foreach percorre e edita os valores de algo, MAP ela percorre e retorna
 
 export default function Home({latestEpisodes,allEpisodes}: HomeProps) {
+  const {play} = useContext(PlayerContext)
+
   return ( //id de episodio nunca repete, deve-se usar como key pro react recriar o html sem conflito
     <div className={styles.homepage}>
       <section className={styles.latestEpisodes}>
 
-          <h2>Últimos lançamento 😲🤯</h2>
+          <h2>Últimos lançamento😲🤯</h2>
           <ul> 
             {latestEpisodes.map(episode => {
-              return (
+              return ( 
                 <li key={episode.id}> 
                 
                   <Image width={192} 
@@ -58,11 +62,11 @@ export default function Home({latestEpisodes,allEpisodes}: HomeProps) {
 
                     </div>
 
-                    <Link href={episode.url}>
-                    <button type = "button">
+                    
+                    <button type = "button" onClick={ () => play(episode)}>
                       <img src = "/play-green.svg" alt="Play"/> 
                     </button>
-                    </Link>
+                    
 
                 </li>
               )
@@ -85,33 +89,32 @@ export default function Home({latestEpisodes,allEpisodes}: HomeProps) {
               </tr>
             </thead>
             <tbody>
-              {allEpisodes.map(episode =>{
+              {allEpisodes.map(episode2 =>{
                 return(
-                <tr key = {episode.id}>  
+                <tr key = {episode2.id}>  
                   <td style={{width: 100}}>
                     <Image 
-                      width={120}
-                      height={120}
-                      src={episode.thumbnail}
-                      alt={episode.title}
+                      width={240}
+                      height={240}
+                      src={episode2.thumbnail}
+                      alt={episode2.title}
                       objectFit="cover"
                     />
 
                   </td>
                   <td>
-                  <Link href={`/episodes/${episode.id}`}>
-                        <a>{episode.title}</a>
+                  <Link href={`/episodes/${episode2.id}`}>
+                        <a>{episode2.title}</a>
                       </Link>
                   </td>
-                  <td>{episode.members}</td>
-                  <td style={{width: 100}}>{episode.publishedAt}</td>
-                  <td>{episode.durationAsString}</td>
+                  <td>{episode2.members}</td>
+                  <td style={{width: 100}}>{episode2.publishedAt}</td>
+                  <td>{episode2.durationAsString}</td>
                   <td>
-                  <Link href={episode.url}>
-                    <button type="button">
-                      <img src="/play-green.svg" alt="Toca umazinha"/>
+                  
+                  <button type="button" onClick={ () => play(episode2)}>
+                      <img src="/play-green.svg" alt="Toca umazinha" />
                     </button> 
-                    </Link>
                   </td>
                 </tr> 
                 )

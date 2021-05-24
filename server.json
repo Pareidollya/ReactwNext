@@ -1,22 +1,48 @@
 {
   "episodes": [
     {
+      "id": "ben-10",      
+      "title": "ben 10",
+      "members": "ben 10",
+      "published_at": "2021-05-24 16:35:40",
+      "thumbnail": "https://cdn.discordapp.com/attachments/299228773415649281/846388947592282142/maxresdefault.png",
+      "description": "<p>Ben 10 abertura maneiro>",
+      "file": {
+        "url": "https://cdn.discordapp.com/attachments/299228773415649281/846389041346773022/ben-10-abertura-estourado.mp3",
+        "type": "audio/x-mp3",
+        "duration": 61
+      }
+    }, 
+    {
+      "id": "rapai-ratinho",      
+      "title": "RAPAI RATINHO",
+      "members": "rat, inho, audios",
+      "published_at": "2021-05-24 16:35:40",
+      "thumbnail": "https://cdn.discordapp.com/attachments/435963669948661770/846384426548199454/hqdefault.png",
+      "description": "<p>tapoha é os audio do ratinho em 11 segundos.</p>",
+      "file": {
+        "url": "https://cdn.discordapp.com/attachments/435963669948661770/846384073102589953/rapai-ratinhoooo.mp3",
+        "type": "audio/x-mp3",
+        "duration": 11
+      }
+    }, 
+    {
       "id": "LAUN-MENDES-GODBYE2",      
-      "title": "Assista também: LAUN MENDES ASSITA MAIS ENDING 2 MEU DEUS😲",
+      "title": "LAUN MENDES ASSITA MAIS ENDING 2 MEU DEUS😲",
       "members": "LUAN, MENDES",
       "published_at": "2021-01-22 16:35:40",
       "thumbnail": "https://cdn.discordapp.com/attachments/299228773415649281/845296670162157598/unknown.png ",
       "description": "<p>CARALHO É O LUAN MENDES MANDANDO TCHAU PAZ GALERINHA DO YT.</p>",
       "file": {
-        "url": "https://youtu.be/Jb89CrnX6MY?t=797",
-        "type": "audio/mp3",
+        "url": "https://cdn.discordapp.com/attachments/299228773415649281/845303650930917426/whatsapp-sound-whistle-donwload.mp3",
+        "type": "audio/x-mp3",
         "duration": 3981
       } 
     },
 
     {
       "id": "LAUN-MENDES-GODBYE",      
-      "title": "Assista também: LAUN MENDES ASSITA MAIS ENDING 😲",
+      "title": "LAUN MENDES ASSITA MAIS ENDING 😲",
       "members": "LUAN, MENDES",
       "published_at": "2021-01-22 16:35:40",
       "thumbnail": "https://cdn.discordapp.com/attachments/299228773415649281/845293780815052810/unknown.png",

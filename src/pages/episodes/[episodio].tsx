@@ -7,6 +7,9 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { api } from '../../services/api';
 import { convertDurationToTimeString } from '../../utils/convertDutrationToTimeString';
 import styles from './episode.module.scss'
+import { useContext, useRef, useEffect } from 'react';
+import { PlayerContext } from '../../components/contexts/PlayerContext';
+
 
 type Episode ={
     id: string;
@@ -26,8 +29,7 @@ type Episode ={
 
 
 export default function Episode({ episode }: EpisodeProps){
-    //const router = useRouter();
-
+    const {play} = useContext(PlayerContext)
     return(
         <div className={styles.episode}>
             <div className={styles.thumbnailContainer}>
@@ -37,17 +39,16 @@ export default function Episode({ episode }: EpisodeProps){
                     </button>
                 </Link>
                 <Image 
-                width={700}
-                height={280}
+                width={800}
+                height={500}
                 src={episode.thumbnail}
                 objectFit="cover"
                 />
 
-                <Link href={episode.url}>
-                    <button type = "button">
+                
+                    <button type = "button" onClick={ () => play(episode)}>
                         <img src = "/play.svg" alt="Tocar umazinha"/>
                     </button>
-                </Link>
             </div>
 
             <header>
@@ -64,8 +65,23 @@ export default function Episode({ episode }: EpisodeProps){
 }
 
 export const getStaticPaths: GetStaticPaths = async() => {
+    const {data} = await api.get('episodes', {
+        params: {
+          _limit: 2,
+          _sort: 'published_at',
+          _order: 'desc'
+        }
+      })
+
+      const paths = data.map(episode =>{
+          return{
+              params: {
+                  episodio: episode.id
+              }
+          }
+      })
      return{
-         paths:[],
+         paths,
          fallback: 'blocking'
      }
 }
