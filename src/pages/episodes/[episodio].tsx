@@ -7,8 +7,9 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { api } from '../../services/api';
 import { convertDurationToTimeString } from '../../utils/convertDutrationToTimeString';
 import styles from './episode.module.scss'
-import { useContext, useRef, useEffect } from 'react';
-import { PlayerContext } from '../../components/contexts/PlayerContext';
+import { usePlayer } from '../../components/contexts/PlayerContext';
+import Head from 'next/head';
+
 
 
 type Episode ={
@@ -29,9 +30,14 @@ type Episode ={
 
 
 export default function Episode({ episode }: EpisodeProps){
-    const {play} = useContext(PlayerContext)
+
+    const { play } = usePlayer();
+
     return(
         <div className={styles.episode}>
+            <Head>
+                <title>{episode.title} • Whatsapp 2 </title>
+            </Head>
             <div className={styles.thumbnailContainer}>
                 <Link href="/"> 
                     <button type="button">

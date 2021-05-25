@@ -1,8 +1,61 @@
 {
   "episodes": [
     {
+      "id": "chaves-op",      
+     "title": "Oppening do chaves maneiro",
+      "members": "chavo del ocho",
+      "published_at": "2021-05-24 16:35:40",
+      "thumbnail": "https://cdn.discordapp.com/attachments/435963669948661770/846503984356392990/unknown.png",
+      "description": "<p>Não me responsabilizo por fonoes de ouvidos danificados</p>",
+      "file": {
+        "url": "https://cdn.discordapp.com/attachments/435963669948661770/846504079425536000/chaves-musica-estourada.mp3",
+        "type": "audio/x-mp3",
+        "duration": 140
+      }
+    }, 
+    {
+      "id": "xaropinho-rapaz",      
+     "title": "Rapaaaaaaz",
+      "members": "xaropinho e rapaz",
+      "published_at": "2021-05-24 16:35:40",
+      "thumbnail": "https://cdn.discordapp.com/attachments/299228773415649281/846450628275601468/hqdefault.png",
+      "description": "<p>RÁ PAZ</p>",
+      "file": {
+        "url": "https://cdn.discordapp.com/attachments/299228773415649281/846450652681863209/vinheta-xaropinho-rapaz.mp3",
+        "type": "audio/x-mp3",
+        "duration": 2
+      }
+    }, 
+    {
+      "id": "pepino-de-novo",      
+     "title": "Pepino entra em ação",
+      "members": "pepino e outro",
+      "published_at": "2021-05-24 16:35:40",
+      "thumbnail": "https://cdn.discordapp.com/attachments/299228773415649281/846435493679595530/hqdefault.png",
+      "description": "<p>Pepino de novo</p><p>Pepino de novo</p><p>Pepino de novo</p><p>Pepino de novo</p><p>Pepino de novo</p>",
+      "file": {
+        "url": "https://cdn.discordapp.com/attachments/299228773415649281/846435457671102474/pipino-de-novo.mp3",
+        "type": "audio/x-mp3",
+        "duration": 89
+      }
+    }, 
+
+    {
+      "id": "cavalo-cavalo",      
+     "title": "cavalo",
+      "members": "cavalo",
+      "published_at": "2021-05-24 16:35:40",
+      "thumbnail": "https://cdn.discordapp.com/attachments/435963669948661770/846385712756555796/hqdefault.png",
+      "description": "<p>cavalo</p>",
+      "file": {
+        "url": "https://cdn.discordapp.com/attachments/435963669948661770/846385656816336896/cavalo.mp3",
+        "type": "audio/x-mp3",
+        "duration": 2 
+      }
+    }, 
+    {
       "id": "ben-10",      
-      "title": "ben 10",
+      "title": "abertura ben 10",
       "members": "ben 10",
       "published_at": "2021-05-24 16:35:40",
       "thumbnail": "https://cdn.discordapp.com/attachments/299228773415649281/846388947592282142/maxresdefault.png",
@@ -42,13 +95,13 @@
 
     {
       "id": "LAUN-MENDES-GODBYE",      
-      "title": "LAUN MENDES ASSITA MAIS ENDING 😲",
+      "title": "LAUN MENDES ASSITA MAIS ENDING EXTENDED😲",
       "members": "LUAN, MENDES",
       "published_at": "2021-01-22 16:35:40",
       "thumbnail": "https://cdn.discordapp.com/attachments/299228773415649281/845293780815052810/unknown.png",
       "description": "<p>CARALHO É O LUAN MENDES MANDANDO TCHAU PAZ GALERINHA DO YT.</p>",
       "file": {
-        "url": "https://youtu.be/vuZC9wNDmZw?t=660",
+        "url": "https://cdn.discordapp.com/attachments/299228773415649281/846438284795183134/aero-chord-feat-ddark-shootin-stars-ncs-release_mp3cut.net.mp3",
         "type": "audio/mp3",
         "duration": 3981
       } 

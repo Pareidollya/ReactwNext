@@ -3,6 +3,7 @@ import { GetStaticProps } from 'next';
 import { useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link'; //o componente vai em volta da ancora de link
+import Head from 'next/head';
 import { format, parseISO } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { api } from '../services/api';
@@ -34,15 +35,21 @@ type HomeProps = {
 //foreach percorre e edita os valores de algo, MAP ela percorre e retorna
 
 export default function Home({latestEpisodes,allEpisodes}: HomeProps) {
-  const {play} = useContext(PlayerContext)
+  const { playList } = useContext(PlayerContext)
+
+  const episodeList = [...latestEpisodes, ...allEpisodes] //todos os episodios em uma unica lista
 
   return ( //id de episodio nunca repete, deve-se usar como key pro react recriar o html sem conflito
+    
     <div className={styles.homepage}>
+      <Head>
+        <title>Whatsapp 2 • Manda Salve 🙏 </title>
+      </Head>
       <section className={styles.latestEpisodes}>
 
           <h2>Últimos lançamento😲🤯</h2>
           <ul> 
-            {latestEpisodes.map(episode => {
+            {latestEpisodes.map((episode, index) => {
               return ( 
                 <li key={episode.id}> 
                 
@@ -63,7 +70,7 @@ export default function Home({latestEpisodes,allEpisodes}: HomeProps) {
                     </div>
 
                     
-                    <button type = "button" onClick={ () => play(episode)}>
+                    <button type = "button" onClick={ () => playList(episodeList, index)}>
                       <img src = "/play-green.svg" alt="Play"/> 
                     </button>
                     
@@ -89,30 +96,30 @@ export default function Home({latestEpisodes,allEpisodes}: HomeProps) {
               </tr>
             </thead>
             <tbody>
-              {allEpisodes.map(episode2 =>{
+              {allEpisodes.map((episode, index) =>{
                 return(
-                <tr key = {episode2.id}>  
+                <tr key = {episode.id}>  
                   <td style={{width: 100}}>
                     <Image 
                       width={240}
                       height={240}
-                      src={episode2.thumbnail}
-                      alt={episode2.title}
+                      src={episode.thumbnail}
+                      alt={episode.title}
                       objectFit="cover"
                     />
 
                   </td>
                   <td>
-                  <Link href={`/episodes/${episode2.id}`}>
-                        <a>{episode2.title}</a>
+                  <Link href={`/episodes/${episode.id}`}>
+                        <a>{episode.title}</a>
                       </Link>
                   </td>
-                  <td>{episode2.members}</td>
-                  <td style={{width: 100}}>{episode2.publishedAt}</td>
-                  <td>{episode2.durationAsString}</td>
+                  <td>{episode.members}</td>
+                  <td style={{width: 100}}>{episode.publishedAt}</td>
+                  <td>{episode.durationAsString}</td>
                   <td>
                   
-                  <button type="button" onClick={ () => play(episode2)}>
+                  <button type="button" onClick={ () => playList(episodeList, index + latestEpisodes.length)}>
                       <img src="/play-green.svg" alt="Toca umazinha" />
                     </button> 
                   </td>
